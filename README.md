@@ -27,6 +27,6 @@ Controller	Deals with logic – it gets input, works with the model, and returns
 
 Task 1: To make backend for URL Shotner ✅ on 18/4/2025
 
-Task 2: Implement basic front end for the same using EJS
+Task 2: Implement basic front end for the same using EJS ✅ on 25/4/2025
 
 Task 3: Add authentication to the application
