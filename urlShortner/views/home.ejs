@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hey from EJS</h1>
+  
+    <% if (locals.id) { %>
+     <p>URL Generated: http://localhost:8001/url/<%= id %></p>
+    <% } %>
+    <div>
+        <form method="post" action="/url" >
+
+        <label>Enter your URL</label>
+        <input
+            type="text"
+            name="url"
+            placeholder="https://example.com"
+        />
+        <button type="Submit">Generate</button>
+        
+    </form>
+    </div>
+    <% if (locals.url) { %>
+        <table>
+        <thead>
+            <th>S.No</th>
+            <th>Short URL</th>
+            <th>Redirect URL</th>
+            <th>Visited count</th>
+        </thead>
+        <tbody>
+
+                <% url.forEach((urls,index) => { %>
+                    <tr>
+                    <td><%= index+1 %></td>
+                    <td><%= urls.shortId %></td>
+                    <td><%= urls.redirectURL%></td>
+                    <td><%= urls.visitHistory.length%></td>
+                </tr>
+                <% }) %>
+            
+        </tbody>
+    </table>
+    <% } %>
+    
+</body>
+</html>
